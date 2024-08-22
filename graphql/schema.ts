@@ -1,3 +1,5 @@
+import {builder} from "@/graphql/builder";
+
 export const typeDefs =`
   type Link {
     id: ID
@@ -13,3 +15,5 @@ export const typeDefs =`
     links: [Link]!
   }
  `
+
+export const schema = builder.toSchema()
