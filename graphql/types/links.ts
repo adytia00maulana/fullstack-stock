@@ -1,4 +1,4 @@
-import {builder} from "@/graphql/builder";
+import {builder} from '../builder';
 
 builder.prismaObject('Link', {
     fields: (t) => ({
@@ -11,3 +11,15 @@ builder.prismaObject('Link', {
         users: t.relation('users')
     })
 })
+
+// 1.
+builder.queryField("links", (t) =>
+// 2.
+    t.prismaField({
+        // 3.
+        type: ['Link'],
+        // 4.
+        resolve: (query, _parent, _args, _ctx, _info) =>
+            prisma.link.findMany({ ...query })
+    })
+)
