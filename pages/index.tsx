@@ -16,9 +16,15 @@ const AllLinksQuery = gql`
 `
 
 export default function Home() {
-    const { data, loading, error } = useQuery(AllLinksQuery)
+    const {data, loading, error} = useQuery(AllLinksQuery)
 
-    if (loading) return <p>Loading...</p>
+    if (loading) {
+        return <div className="w-full gap-x-2 flex justify-center items-center">
+                    <div className="w-5 bg-[#d991c2] animate-pulse h-5 rounded-full"></div>
+                    <div className="w-5 animate-pulse h-5 bg-[#9869b8] rounded-full"></div>
+                    <div className="w-5 h-5 animate-pulse bg-[#6756cc] rounded-full"></div>
+                </div>
+    }
     if (error) return <p>Oh no... {error.message}</p>
 
     return (
@@ -45,8 +51,10 @@ export default function Home() {
                                         viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
-                                        <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                                        <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                        <path
+                                            d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                        <path
+                                            d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
                                     </svg>
                                 </a>
                             </div>
