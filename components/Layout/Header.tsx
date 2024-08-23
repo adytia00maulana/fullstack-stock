@@ -22,13 +22,13 @@ const Header = () => {
             ></path>
           </svg>
         </Link>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        {/*<nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">*/}
           {/*{user && (*/}
-            <div className="flex items-center justify-center mr-5 capitalize bg-blue-500 py-1 px-3 rounded-md text-white">
-              <Link href="/admin">
-                + Create
-              </Link>
-            </div>
+          {/*  <div className="flex items-center justify-center mr-5 capitalize bg-blue-500 py-1 px-3 rounded-md text-white">*/}
+          {/*    <Link href="/admin">*/}
+          {/*      + Create*/}
+          {/*    </Link>*/}
+          {/*  </div>*/}
           {/*)}*/}
           {/*{user ? (*/}
           {/*  <div className="flex items-center space-x-5">*/}
@@ -42,7 +42,7 @@ const Header = () => {
           {/*    Login*/}
           {/*  </Link>*/}
           {/*)}*/}
-        </nav>
+        {/*</nav>*/}
       </div>
     </header>
   )
