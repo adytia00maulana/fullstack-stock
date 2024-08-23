@@ -45,7 +45,7 @@ function Home() {
     return (
         <div>
             <Head>
-                <title>Awesome Links</title>
+                <title>Stock</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="container mx-auto max-w-5xl my-20">
@@ -66,16 +66,16 @@ function Home() {
                         className="px-4 py-2 bg-blue-500 text-white rounded my-10"
                         onClick={() => {
                             fetchMore({
-                                variables: { after: endCursor },
-                                updateQuery: (prevResult, { fetchMoreResult }) => {
+                                variables: {after: endCursor},
+                                updateQuery: (prevResult, {fetchMoreResult}) => {
                                     fetchMoreResult.links.edges = [
                                         ...prevResult.links.edges,
                                         ...fetchMoreResult.links.edges,
                                     ];
                                     return fetchMoreResult;
                                 },
-                            });
-                        }}
+                            }).then(r => console.error(r));
+                         }}
                     >
                         more
                     </button>
