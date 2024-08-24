@@ -27,7 +27,44 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+## Running the app
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+## Running Prisma Migrate
+Seed is Insert Dummy data to Database
+<ul>
+    <li>It creates a new SQL migration file for this migration</li>
+    <li>It runs the SQL migration file against the database</li>
+</ul>
+
+```bash
+$ npx prisma migrate dev --name init
+```
+
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Running Prisma Studio
+Seed is Insert Dummy data to Database
+```bash
+$ npx prisma studio
+```
+
+## Running Seed
+Seed is Insert Dummy data to Database
+```bash
+$ npx prisma db seed
+```
+
 
 ## Deploy on Vercel
 

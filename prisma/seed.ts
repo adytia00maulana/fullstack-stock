@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import {links} from '../data/links';
+import {links} from '@/prisma/data/links';
 const prisma = new PrismaClient()
 
 async function main() {
