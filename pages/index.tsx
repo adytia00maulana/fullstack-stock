@@ -51,14 +51,7 @@ function Home() {
             <div className="container mx-auto max-w-5xl my-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {data?.links.edges.map(({ node }: { node: Link }) => (
-                        <AwesomeLink
-                            title={node.title}
-                            category={node.category}
-                            url={node.url}
-                            id={node.id}
-                            description={node.description}
-                            imageUrl={node.imageUrl}
-                        />
+                        <AwesomeLink imageUrl={node.imageUrl} url={node.url} title={node.title} category={node.category} description={node.description} id={node.id}/>
                     ))}
                 </div>
                 {hasNextPage ? (
@@ -74,15 +67,13 @@ function Home() {
                                     ];
                                     return fetchMoreResult;
                                 },
-                            }).then(r => console.error(r));
+                            });
                          }}
                     >
-                        more
+                        More
                     </button>
                 ) : (
-                    <p className="my-10 text-center font-medium">
-                        You've reached the end!{" "}
-                    </p>
+                    <p className="my-10 text-center font-medium">You've reached the end!{" "}</p>
                 )}
             </div>
         </div>
