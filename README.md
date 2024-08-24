@@ -65,6 +65,8 @@ Seed is Insert Dummy data to Database
 $ npx prisma db seed
 ```
 
+## Go To Yoga Graphql
+[http://localhost:3000/api/graphql](http://localhost:3000/api/graphql)
 
 ## Deploy on Vercel
 
