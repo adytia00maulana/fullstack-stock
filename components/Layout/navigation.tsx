@@ -15,7 +15,8 @@ import {
 } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import {resolvers} from "@/graphql/resolvers";
-import Cart from "@/components/Layout/navigation/cart";
+import Cart from "@/components/Layout/ui/navigation/cart";
+import Link from "next/link";
 
 const navigation = resolvers;
 
@@ -160,14 +161,14 @@ const Navigation = () => {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <Link href="#">
                   <span className="sr-only">Your Company</span>
                   <img
                       alt=""
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                       className="h-8 w-auto"
                   />
-                </a>
+                </Link>
               </div>
 
               {/* Flyout menus */}

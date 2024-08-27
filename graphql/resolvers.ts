@@ -116,7 +116,7 @@ export const resolvers = {
         },
     ],
     pages: [
-        { name: 'Company', href: '#' },
-        { name: 'Stores', href: '#' },
+        { name: 'Category', href: '/category' },
+        { name: 'Product', href: '/product' },
     ],
 }
