@@ -1,10 +1,10 @@
 import { gql, useQuery } from '@apollo/client'
-import type { Link } from '@prisma/client'
+import type { Product } from '@prisma/client'
 import {AwesomeLink} from "@/components/AwesomeLink";
 
-const AllLinksQuery = gql`
-    query allLinksQuery($first: Int, $after: String) {
-        links(first: $first, after: $after) {
+const AllProductsQuery = gql`
+    query allProductsQuery($first: Int, $after: String) {
+        products(first: $first, after: $after) {
             pageInfo {
                 endCursor
                 hasNextPage
@@ -12,12 +12,11 @@ const AllLinksQuery = gql`
             edges {
                 cursor
                 node {
-                    imageUrl
-                    url
-                    title
-                    category
-                    description
                     id
+                    imageAlt
+                    href
+                    imageSrc
+                    name
                 }
             }
         }
@@ -25,7 +24,7 @@ const AllLinksQuery = gql`
 `;
 
 export default function Product() {
-    const { data, loading, error, fetchMore } = useQuery(AllLinksQuery, {
+    const { data, loading, error, fetchMore } = useQuery(AllProductsQuery, {
         variables: { first: 2 },
     });
 
@@ -38,14 +37,14 @@ export default function Product() {
     }
     if (error) return <p>Oh no... {error.message}</p>;
 
-    const { endCursor, hasNextPage } = data.links.pageInfo;
+    const { endCursor, hasNextPage } = data.products.pageInfo;
 
     return (
         <div className="container mx-auto max-w-5xl my-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {data?.links.edges.map(({ node }: { node: Link }) => (
+                {data?.products.edges.map(({ node }: { node: Product }) => (
                     <div key={node.id}>
-                        <AwesomeLink imageUrl={node.imageUrl} url={node.url} title={node.title} category={node.category} description={node.description} id={node.id} />
+                        <AwesomeLink imageUrl={node.imageSrc} url={node.href} title={node.name} category={node.imageAlt} description={node.imageAlt} id={node.id} />
                     </div>
                 ))}
             </div>
@@ -56,9 +55,9 @@ export default function Product() {
                         fetchMore({
                             variables: {after: endCursor},
                             updateQuery: (prevResult, {fetchMoreResult}) => {
-                                fetchMoreResult.links.edges = [
-                                    ...prevResult.links.edges,
-                                    ...fetchMoreResult.links.edges,
+                                fetchMoreResult.products.edges = [
+                                    ...prevResult.products.edges,
+                                    ...fetchMoreResult.products.edges,
                                 ];
                                 return fetchMoreResult;
                             },
