@@ -34,3 +34,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Prisma
+command to create a migration and the tables in your database:
+```bash
+npx prisma migrate dev --name init
+```
+
+Command to Show Prisma Studio
+```bash
+prisma studio
+```
+
+command to seed the database:
+```bash
+npx prisma db seed
+```
+
+command to re-generate prisma client
+```bash
+npx prisma generate
+```
+## GraphQL
+<strong>/pages/api/graphql.ts</strong><br/>
+created a new GraphQL Yoga server instance that is the default export <br/>
+
+
+## Pothos
+Pothos is a GraphQL schema construction library where you define your GraphQL schema using code
