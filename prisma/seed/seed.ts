@@ -2,18 +2,23 @@ import { PrismaClient } from '@prisma/client'
 import {links} from './data/links';
 import {colors} from './data/colors';
 import {sizes} from './data/sizes';
+import {products} from "./data/products";
 const prisma = new PrismaClient()
 
 async function main() {
     await prisma.user.create({
         data: {
-            email: `testemail@gmail.com`,
+            email: 'admin@gmail.com',
             role: 'ADMIN',
         },
     })
 
     await prisma.link.createMany({
         data: links,
+    })
+
+    await prisma.product.createMany({
+        data: products,
     })
 
     await prisma.color.createMany({

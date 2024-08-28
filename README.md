@@ -67,18 +67,17 @@ $ npx prisma db seed
 
 command to re-generate prisma client
 ```bash
-npx prisma generate
+$ npx prisma generate
 ```
 ## GraphQL
-<strong>/pages/api/graphql.ts</strong><br/>
-created a new GraphQL Yoga server instance that is the default export <br/>
-<strong>graphql/schema.ts</strong><br/>
-defined object types for the schema available in the GraphQL schema<br/>
+`/pages/api/graphql.ts` created a new GraphQL Yoga server instance that is the default export <br/>
+`graphql/schema.ts` defined object types for the schema available in the GraphQL schema<br/>
+Open [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql) with your browser to see the ui yoga graphql.
 
 
 ## Pothos
 Pothos is a GraphQL schema construction library where you define your GraphQL schema using code <br/>
-<strong>/graphql/types/*</strong> for Defining the schema using Pothos
+`/graphql/types/*` for Defining the schema using Pothos
 <ul>
 <li>name: The name of the model in the Prisma schema you would like to expose.</li>
 <li>options: The options for defining the type you're exposing such as the description, fields, etc.</li>
