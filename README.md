@@ -75,9 +75,13 @@ created a new GraphQL Yoga server instance that is the default export <br/>
 
 
 ## Pothos
-Pothos is a GraphQL schema construction library where you define your GraphQL schema using code
-## Go To Yoga Graphql
-[http://localhost:3000/api/graphql](http://localhost:3000/api/graphql)
+Pothos is a GraphQL schema construction library where you define your GraphQL schema using code <br/>
+<strong>/graphql/types/</strong> for Defining the schema using Pothos
+<ul>
+<li>name: The name of the model in the Prisma schema you would like to expose.</li>
+<li>options: The options for defining the type you're exposing such as the description, fields, etc.</li>
+</ul>
+Note: You can use CTRL + Space to invoke your editor's intellisense and view the available arguments
 
 ## Deploy on Vercel
 
