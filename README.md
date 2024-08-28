@@ -65,6 +65,17 @@ Seed is Insert Dummy data to Database
 $ npx prisma db seed
 ```
 
+command to re-generate prisma client
+```bash
+npx prisma generate
+```
+## GraphQL
+<strong>/pages/api/graphql.ts</strong><br/>
+created a new GraphQL Yoga server instance that is the default export <br/>
+
+
+## Pothos
+Pothos is a GraphQL schema construction library where you define your GraphQL schema using code
 ## Go To Yoga Graphql
 [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql)
 
